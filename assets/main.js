@@ -37,7 +37,7 @@ var app = new Vue({
     client.metadata().then(function(metadata) {
       app.base = new Airtable({
         apiKey: metadata.settings.airtable_api_key
-      }).base(metadata.settings.airtable_base_key);
+      }).base(metadata.settings.airtable_base_id);
 
       var promises = [];
 
