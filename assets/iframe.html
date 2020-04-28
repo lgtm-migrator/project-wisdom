@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/@zendeskgarden/css-bedrock@7.0.21,npm/@zendeskgarden/css-utilities@4.3.0">
+  <style type="text/css">
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div v-bind:class="{ hidden: !isLoading }">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:#fff;display:block;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+        <circle cx="50" cy="50" fill="none" stroke="#1ba4de" stroke-width="4" r="15" stroke-dasharray="70.68583470577033 25.561944901923447">
+          <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="0.9803921568627451s" values="0 50 50;360 50 50" keyTimes="0;1"></animateTransform>
+        </circle>
+      </svg>
+    </div>
+    <div v-bind:class="{ hidden: isLoading }">
+      <div v-if="error_message"></template>
+        <p>{{ error_message }}</p>
+      </div>
+      <div v-else>
+        <h2 class="u-semibold u-fs-lg">{{ project_name }}</h2>
+
+        <ul class="u-mv-sm">
+          <li v-if="project_clients">
+            <strong>Client</strong> {{ project_clients }}
+          </li>
+          <li v-if="maintenance_status">
+            <strong>Maintenance Status</strong> {{ maintenance_status }}
+          </li>
+          <li v-if="hosting_location">
+            <strong>Hosting Location</strong> {{ hosting_location }}
+          </li>
+          <li v-if="developer_names">
+            <strong>Developers</strong> {{ developer_names }}
+          </li>
+        </ul>
+
+        <div class="links u-mv-xs u-pv-xs u-border-t">
+          <p>
+            <a :href=github_url v-if="github_url" target="_blank">
+              <img src="github.png" />
+            </a>
+            <a :href=slack_url v-if="slack_url" target="_blank">
+              <img src="slack.png" />
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://static.zdassets.com/zendesk_app_framework_sdk/2.0/zaf_sdk.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="airtable.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

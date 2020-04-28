@@ -1,0 +1,17 @@
+{
+  "name": "project_wisdom",
+  "version": "0.0.1",
+  "description": "[brief description of the app]",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "airtable": "^0.8.1",
+    "browserify": "^16.5.1",
+    "vue": "^2.6.11",
+    "zendesk_app_framework_sdk": "^2.0.11"
+  }
+}
