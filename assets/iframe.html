@@ -25,30 +25,49 @@
       <div v-else>
         <h2 class="u-semibold u-fs-lg">{{ project_name }}</h2>
 
+        <p v-if="wisdom_url">
+          <strong><a :href=wisdom_url target="_blank">Read the Project Wisdom</a></strong>
+        </p>
+
         <ul class="u-mv-sm">
           <li v-if="project_clients">
-            <strong>Client</strong> {{ project_clients }}
+            <strong>Client</strong><br>
+            {{ project_clients }}
           </li>
           <li v-if="maintenance_status">
-            <strong>Maintenance Status</strong> {{ maintenance_status }}
+            <strong>Maintenance Status</strong><br>
+            {{ maintenance_status }}
           </li>
           <li v-if="hosting_location">
-            <strong>Hosting Location</strong> {{ hosting_location }}
+            <strong>Hosting Location</strong><br>
+            {{ hosting_location }}
           </li>
           <li v-if="developer_names">
-            <strong>Developers</strong> {{ developer_names }}
+            <strong>Developers</strong><br>
+            {{ developer_names }}
           </li>
         </ul>
 
-        <div class="links u-mv-xs u-pv-xs u-border-t">
+        <div class="links u-mv-sm u-pv-sm u-border-t">
           <p>
+            <a :href=trello_url v-if="trello_url" target="_blank">
+              <i class="fab fa-2x fa-trello" title="View the project's Trello board"></i>
+            </a>
             <a :href=github_url v-if="github_url" target="_blank">
-              <img src="github.png" />
+              <i class="fab fa-2x fa-github" title="View the project's source code on GitHub"></i>
+            </a>
+            <a :href=drive_url v-if="drive_url" target="_blank">
+              <i class="fab fa-2x fa-google-drive" title="View the project's folder on Google Drive"></i>
             </a>
             <a :href=slack_url v-if="slack_url" target="_blank">
-              <img src="slack.png" />
+              <i class="fab fa-2x fa-slack" title="Go to the project's Slack channel"></i>
             </a>
           </p>
+          <div class="u-mv-sm u-pv-sm u-border-t">
+            <p><a :href=airtable_url target="_blank">See this project on AirTable</a></p>
+            <p v-if="last_reviewed"><small>This information last reviewed {{ last_reviewed }}.</small></p>
+            <p v-else><b>This information has not yet been marked as reviewed.</b> Maybe you could go do it?</p>
+          </div>
         </div>
       </div>
     </div>
@@ -56,6 +75,7 @@
 
   <script src="https://static.zdassets.com/zendesk_app_framework_sdk/2.0/zaf_sdk.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kit.fontawesome.com/999bfae655.js" crossorigin="anonymous"></script>
   <script src="airtable.js"></script>
   <script src="main.js"></script>
 </body>
