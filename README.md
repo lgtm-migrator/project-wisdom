@@ -33,3 +33,9 @@ https://dxw.zendesk.com/agent/tickets/123345?zat=true
 ```
 
 Click on the `Apps` button on the ticket view to see the app in action!
+
+## Building a new version
+
+Run `zat validate`, review any errors/warnings, and then run `zat package`.
+
+Upload the resulting Zip file to Zendeks following the [instructions on the Zendesk website](https://support.zendesk.com/hc/en-us/articles/203662486-Managing-your-installed-apps#topic_x3y_r22_r5).
