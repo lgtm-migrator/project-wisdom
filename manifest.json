@@ -9,17 +9,14 @@
     {
       "name": "airtable_api_key",
       "type": "text",
-      "secure": true,
       "required": true
     },
     {
       "name": "airtable_base_id",
       "type": "text",
-      "secure": true,
       "required": true
     }
   ],
-  "domainWhitelist": ["api.airtable.com"],
   "defaultLocale": "en",
   "private": true,
   "location": {
