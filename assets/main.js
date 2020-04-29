@@ -37,7 +37,7 @@ var app = new Vue({
     client.metadata().then(function(metadata) {
       app.base = new Airtable({
         apiKey: metadata.settings.airtable_api_key
-      }).base(metadata.settings.airtable_base_key);
+      }).base(metadata.settings.airtable_base_id);
 
       var promises = [];
 
@@ -48,7 +48,14 @@ var app = new Vue({
           if (projectData.length > 0) {
             var project = projectData[0];
 
+            app.airtable_url = "https://airtable.com/tblne7bw5jfACz2XB/viwF0lQjetG2ICuO2/" + project.id;
+
             app.project_name = project.fields["Project Name"];
+
+            console.log(project);
+
+            app.maintenance_status = project.fields["Maintenance Status"];
+            app.last_reviewed = project.fields["Record last reviewed"];
 
             if (project.fields["Client"]) {
               promises.push(app.getClientNames(project.fields["Client"]).then(function(clientNames) {
@@ -68,9 +75,13 @@ var app = new Vue({
               }));
             }
 
-            app.maintenance_status = project.fields["Maintenance Status"];
+            app.wisdom_url = project.fields["Project Wisdom"];
+
             app.github_url = project.fields["GitHub URL"];
             app.slack_url = project.fields["Slack Link"];
+            app.trello_url = project.fields["Trello Board"];
+            app.drive_url = project.fields["Google Drive Folder"];
+
           } else {
            app.error_message = "Project not found"
           }
