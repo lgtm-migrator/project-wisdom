@@ -57,8 +57,6 @@ var app = new Vue({
 
             app.project_name = project.fields["Project Name"];
 
-            console.log(project);
-
             app.maintenance_status = project.fields["Maintenance Status"];
             app.last_reviewed = project.fields["Record last reviewed"];
 
