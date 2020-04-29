@@ -14,6 +14,11 @@ var app = new Vue({
     slack_url: null,
     base: null,
     error_message: null,
+    wisdom_url: null,
+    trello_url: null,
+    drive_url: null,
+    airtable_url: null,
+    last_reviewed: null,
     isLoading: true,
     clients: function() {
       return this.base('Clients').select().all()
