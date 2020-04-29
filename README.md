@@ -1,6 +1,6 @@
 # Project Wisdom
 
-A Zendesk App that fetches contextual informtion about a ticket from its custom
+A Zendesk App that fetches contextual information about a ticket from its custom
 project field.
 
 ## Prerequisites
