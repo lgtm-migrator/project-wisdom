@@ -25,9 +25,17 @@
       <div v-else>
         <h2 class="u-semibold u-fs-lg">{{ project_name }}</h2>
 
-        <p v-if="wisdom_url">
-          <strong><a :href=wisdom_url target="_blank">Read the Project Wisdom</a></strong>
-        </p>
+        <ul class="u-mv-sm">
+          <li v-if="wisdom_url">
+            <strong><a :href=wisdom_url target="_blank">Read the Project Wisdom</a></strong>
+          </li>
+          <li v-if="production_url">
+            <strong><a :href=production_url target="_blank">View Production</a></strong>
+          </li>
+          <li v-if="staging_url">
+            <strong><a :href=staging_url target="_blank">View Staging</a></strong>
+          </li>
+        </ul>
 
         <ul class="u-mv-sm">
           <li v-if="project_clients">
@@ -52,6 +60,9 @@
           <p>
             <a :href=trello_url v-if="trello_url" target="_blank">
               <i class="fab fa-2x fa-trello" title="View the project's Trello board"></i>
+            </a>
+            <a :href=govpress_git_url v-if="govpress_git_url" target="_blank">
+              <i class="fab fa-2x fa-gitlab" title="View the project's source code on GovPress Git"></i>
             </a>
             <a :href=github_url v-if="github_url" target="_blank">
               <i class="fab fa-2x fa-github" title="View the project's source code on GitHub"></i>

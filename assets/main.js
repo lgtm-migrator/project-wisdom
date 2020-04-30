@@ -10,11 +10,14 @@ var app = new Vue({
     maintenance_status: null,
     hosting_location: null,
     developer_names: null,
+    govpress_git_url: null,
     github_url: null,
     slack_url: null,
     base: null,
     error_message: null,
     wisdom_url: null,
+    production_url: null,
+    staging_url: null,
     trello_url: null,
     drive_url: null,
     airtable_url: null,
@@ -80,6 +83,10 @@ var app = new Vue({
 
             app.wisdom_url = project.fields["Project Wisdom"];
 
+            app.production_url = project.fields["Production URL"];
+            app.staging_url = project.fields["Staging URL"];
+
+            app.govpress_git_url = project.fields["GovPress Git URL"];
             app.github_url = project.fields["GitHub URL"];
             app.slack_url = project.fields["Slack Link"];
             app.trello_url = project.fields["Trello Board"];
