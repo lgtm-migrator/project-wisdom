@@ -25,9 +25,17 @@
       <div v-else>
         <h2 class="u-semibold u-fs-lg">{{ project_name }}</h2>
 
-        <p v-if="wisdom_url">
-          <strong><a :href=wisdom_url target="_blank">Read the Project Wisdom</a></strong>
-        </p>
+        <ul class="u-mv-sm">
+          <li v-if="wisdom_url">
+            <strong><a :href=wisdom_url target="_blank">Read the Project Wisdom</a></strong>
+          </li>
+          <li v-if="production_url">
+            <strong><a :href=production_url target="_blank">View Production</a></strong>
+          </li>
+          <li v-if="staging_url">
+            <strong><a :href=staging_url target="_blank">View Staging</a></strong>
+          </li>
+        </ul>
 
         <ul class="u-mv-sm">
           <li v-if="project_clients">
