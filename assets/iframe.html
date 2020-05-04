@@ -54,18 +54,22 @@
             <strong>Developers</strong><br>
             {{ developer_names }}
           </li>
+          <li v-if="git_repositories">
+            <strong>Repositories</strong><br>
+            <ul>
+              <li v-for="repository in git_repositories">
+                <i class="fab fa-github" v-if="repository['Domain'] === 'github.com'"></i>
+                <i class="fab fa-gitlab" v-else-if="repository['Domain'] === 'git.govpress.com'"></i>
+                <a :href=repository['URL'] target="_blank">{{ repository["Repository"] }}</a>
+              </li>
+            </ul>
+          </li>
         </ul>
 
         <div class="links u-mv-sm u-pv-sm u-border-t">
           <p>
             <a :href=trello_url v-if="trello_url" target="_blank">
               <i class="fab fa-2x fa-trello" title="View the project's Trello board"></i>
-            </a>
-            <a :href=govpress_git_url v-if="govpress_git_url" target="_blank">
-              <i class="fab fa-2x fa-gitlab" title="View the project's source code on GovPress Git"></i>
-            </a>
-            <a :href=github_url v-if="github_url" target="_blank">
-              <i class="fab fa-2x fa-github" title="View the project's source code on GitHub"></i>
             </a>
             <a :href=drive_url v-if="drive_url" target="_blank">
               <i class="fab fa-2x fa-google-drive" title="View the project's folder on Google Drive"></i>

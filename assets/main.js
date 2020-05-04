@@ -10,8 +10,6 @@ var app = new Vue({
     maintenance_status: null,
     hosting_location: null,
     developer_names: null,
-    govpress_git_url: null,
-    github_url: null,
     slack_url: null,
     base: null,
     error_message: null,
@@ -31,6 +29,9 @@ var app = new Vue({
     },
     people: function() {
       return this.base('People').select().all()
+    },
+    git_repositories: function() {
+      return this.base('Repositories').select().all()
     }
   },
   created: function() {
@@ -81,13 +82,17 @@ var app = new Vue({
               }));
             }
 
+            if (project.fields["Git Repositories"]) {
+              promises.push(app.getGitRepositories(project.fields["Git Repositories"]).then(function(gitRepositories) {
+                app.git_repositories = gitRepositories;
+              }));
+            }
+
             app.wisdom_url = project.fields["Project Wisdom"];
 
             app.production_url = project.fields["Production URL"];
             app.staging_url = project.fields["Staging URL"];
 
-            app.govpress_git_url = project.fields["GovPress Git URL"];
-            app.github_url = project.fields["GitHub URL"];
             app.slack_url = project.fields["Slack Link"];
             app.trello_url = project.fields["Trello Board"];
             app.drive_url = project.fields["Google Drive Folder"];
@@ -141,6 +146,15 @@ var app = new Vue({
         return result.map(function(client) {
           return client.fields["Name"];
         }).join(", ");
+      });
+    },
+    getGitRepositories: function(ids) {
+      var git_repositories = this.git_repositories();
+
+      return this.findObjectsByIDs(git_repositories, ids).then(function(result) {
+        return result.map(function(client) {
+          return client.fields;
+        });
       });
     }
   }
