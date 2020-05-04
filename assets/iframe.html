@@ -27,13 +27,13 @@
 
         <ul class="u-mv-sm">
           <li v-if="wisdom_url">
-            <strong><a :href=wisdom_url target="_blank">Read the Project Wisdom</a></strong>
+            <strong><i class="fas fa-fw fa-brain"></i> <a :href=wisdom_url target="_blank">Read the Project Wisdom</a></strong>
           </li>
           <li v-if="production_url">
-            <strong><a :href=production_url target="_blank">View Production</a></strong>
+            <strong><i class="fas fa-fw fa-globe"></i> <a :href=production_url target="_blank">View Production</a></strong>
           </li>
           <li v-if="staging_url">
-            <strong><a :href=staging_url target="_blank">View Staging</a></strong>
+            <strong><i class="fas fa-fw fa-flask"></i> <a :href=staging_url target="_blank">View Staging</a></strong>
           </li>
         </ul>
 
@@ -57,25 +57,25 @@
         </ul>
 
         <div class="links u-mv-sm u-pv-sm u-border-t">
-          <p>
-            <a :href=trello_url v-if="trello_url" target="_blank">
-              <i class="fab fa-2x fa-trello" title="View the project's Trello board"></i>
-            </a>
-            <a :href=govpress_git_url v-if="govpress_git_url" target="_blank">
-              <i class="fab fa-2x fa-gitlab" title="View the project's source code on GovPress Git"></i>
-            </a>
-            <a :href=github_url v-if="github_url" target="_blank">
-              <i class="fab fa-2x fa-github" title="View the project's source code on GitHub"></i>
-            </a>
-            <a :href=drive_url v-if="drive_url" target="_blank">
-              <i class="fab fa-2x fa-google-drive" title="View the project's folder on Google Drive"></i>
-            </a>
-            <a :href=slack_url v-if="slack_url" target="_blank">
-              <i class="fab fa-2x fa-slack" title="Go to the project's Slack channel"></i>
-            </a>
-          </p>
+          <ul>
+            <li v-for="repository in git_repositories">
+              <i class="fab fa-fw fa-github" v-if="repository['Domain'] === 'github.com'" title="GitHub repository"></i>
+              <i class="fab fa-fw fa-gitlab" v-else-if="repository['Domain'] === 'git.govpress.com'" title="GovPress git repository"></i>
+              <a :href=repository['URL'] target="_blank">{{ repository["Repository"] }}</a>
+            </li>
+            <li v-for="channel in slack_channels">
+              <i class="fab fa-fw fa-slack" title="Slack channel"></i>
+              <a :href="channel['Slack Link']">#{{ channel["Name"] }}<span v-if="channel['Description']"> ({{ channel["Description"] }})</span></a>
+            </li>
+            <li  v-if="trello_url">
+              <i class="fab fa-fw fa-trello"></i> <a :href=trello_url target="_blank">Trello board</a>
+            </li>
+            <li v-if="drive_url">
+              <i class="fab fa-fw fa-google-drive"></i> <a :href=drive_url target="_blank">Google Drive folder</a>
+            </li>
+          </ul>
           <div class="u-mv-sm u-pv-sm u-border-t">
-            <p><a :href=airtable_url target="_blank">See this project on AirTable</a></p>
+            <p><i class="fas fa-fw fa-info-circle"></i> <a :href=airtable_url target="_blank">See this project on AirTable</a></p>
             <p v-if="last_reviewed"><small>This information last reviewed {{ last_reviewed }}.</small></p>
             <p v-else><b>This information has not yet been marked as reviewed.</b> Maybe you could go do it?</p>
           </div>
