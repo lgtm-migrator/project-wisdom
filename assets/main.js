@@ -10,7 +10,6 @@ var app = new Vue({
     maintenance_status: null,
     hosting_location: null,
     developer_names: null,
-    slack_url: null,
     base: null,
     error_message: null,
     wisdom_url: null,
@@ -32,6 +31,9 @@ var app = new Vue({
     },
     git_repositories: function() {
       return this.base('Repositories').select().all()
+    },
+    slack_channels: function() {
+      return this.base('Slack Channels').select().all()
     }
   },
   created: function() {
@@ -85,6 +87,12 @@ var app = new Vue({
             if (project.fields["Git Repositories"]) {
               promises.push(app.getGitRepositories(project.fields["Git Repositories"]).then(function(gitRepositories) {
                 app.git_repositories = gitRepositories;
+              }));
+            }
+
+            if (project.fields["Slack Channels"]) {
+              promises.push(app.getSlackChannels(project.fields["Slack Channels"]).then(function(slackChannels) {
+                app.slack_channels = slackChannels;
               }));
             }
 
@@ -152,6 +160,15 @@ var app = new Vue({
       var git_repositories = this.git_repositories();
 
       return this.findObjectsByIDs(git_repositories, ids).then(function(result) {
+        return result.map(function(client) {
+          return client.fields;
+        });
+      });
+    },
+    getSlackChannels: function(ids) {
+      var slack_channels = this.slack_channels();
+
+      return this.findObjectsByIDs(slack_channels, ids).then(function(result) {
         return result.map(function(client) {
           return client.fields;
         });

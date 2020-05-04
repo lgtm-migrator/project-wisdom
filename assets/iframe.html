@@ -63,14 +63,15 @@
               <i class="fab fa-fw fa-gitlab" v-else-if="repository['Domain'] === 'git.govpress.com'" title="GovPress git repository"></i>
               <a :href=repository['URL'] target="_blank">{{ repository["Repository"] }}</a>
             </li>
+            <li v-for="channel in slack_channels">
+              <i class="fab fa-fw fa-slack" title="Slack channel"></i>
+              <a :href="channel['Slack Link']">#{{ channel["Name"] }}<span v-if="channel['Description']"> ({{ channel["Description"] }})</span></a>
+            </li>
             <li  v-if="trello_url">
               <i class="fab fa-fw fa-trello"></i> <a :href=trello_url target="_blank">Trello board</a>
             </li>
             <li v-if="drive_url">
               <i class="fab fa-fw fa-google-drive"></i> <a :href=drive_url target="_blank">Google Drive folder</a>
-            </li>
-            <li v-if="slack_url">
-              <i class="fab fa-fw fa-slack"></i> <a :href=slack_url target="_blank">Slack channel</a>
             </li>
           </ul>
           <div class="u-mv-sm u-pv-sm u-border-t">
