@@ -54,20 +54,15 @@
             <strong>Developers</strong><br>
             {{ developer_names }}
           </li>
-          <li v-if="git_repositories">
-            <strong>Repositories</strong><br>
-            <ul>
-              <li v-for="repository in git_repositories">
-                <i class="fab fa-fw fa-github" v-if="repository['Domain'] === 'github.com'" title="GitHub repository"></i>
-                <i class="fab fa-fw fa-gitlab" v-else-if="repository['Domain'] === 'git.govpress.com'" title="GovPress git repository"></i>
-                <a :href=repository['URL'] target="_blank">{{ repository["Repository"] }}</a>
-              </li>
-            </ul>
-          </li>
         </ul>
 
         <div class="links u-mv-sm u-pv-sm u-border-t">
           <ul>
+            <li v-for="repository in git_repositories">
+              <i class="fab fa-fw fa-github" v-if="repository['Domain'] === 'github.com'" title="GitHub repository"></i>
+              <i class="fab fa-fw fa-gitlab" v-else-if="repository['Domain'] === 'git.govpress.com'" title="GovPress git repository"></i>
+              <a :href=repository['URL'] target="_blank">{{ repository["Repository"] }}</a>
+            </li>
             <li  v-if="trello_url">
               <i class="fab fa-fw fa-trello"></i> <a :href=trello_url target="_blank">Trello board</a>
             </li>
