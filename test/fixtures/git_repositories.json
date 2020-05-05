@@ -1,0 +1,26 @@
+[
+  {
+    "id": "123",
+    "fields": {
+      "Domain": "github.com",
+      "URL": "https://github.com/foo/bar",
+      "Repository": "foo/bar"
+    }
+  },
+  {
+    "id": "456",
+    "fields": {
+      "Domain": "git.govpress.com",
+      "URL": "https://git.govpress.com/bar/foo",
+      "Repository": "bar/foo"
+    }
+  },
+  {
+    "id": "789",
+    "fields": {
+      "Domain": "github.com",
+      "URL": "https://github.com/foo/baz",
+      "Repository": "foo/baz"
+    }
+  }
+]
