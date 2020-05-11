@@ -56,7 +56,7 @@ npm test
 First, build the app:
 
 ```
-npm build
+npm run build
 ```
 
 Then run `zat validate -p dist`, review any errors/warnings, and then run `zat package -p dist`.
