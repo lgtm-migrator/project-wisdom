@@ -1,11 +1,11 @@
 const Airtable = require('airtable')
 
 class AirtableBase {
-  constructor(apiKey, baseID) {
+  constructor (apiKey, baseID) {
     this._base = new Airtable({apiKey: apiKey}).base(baseID)
   }
 
-  async findProjectBySlug(slug) {
+  async findProjectBySlug (slug) {
     var result = await this._base('Projects').select({
       filterByFormula: '({Zendesk Slug}="' + slug + '")'
     }).all()
@@ -13,23 +13,23 @@ class AirtableBase {
     return result[0]
   }
 
-  async clients() {
+  async clients () {
     return this._base('Clients').select().all()
   }
 
-  async hostingLocations() {
+  async hostingLocations () {
     return this._base('Hosting Locations').select().all()
   }
 
-  async people() {
+  async people () {
     return this._base('People').select().all()
   }
 
-  async gitRepositories() {
+  async gitRepositories () {
     return this._base('Repositories').select().all()
   }
 
-  async slackChannels() {
+  async slackChannels () {
     return this._base('Slack Channels').select().all()
   }
 }

@@ -2,7 +2,6 @@
  *  Example app
  **/
 
-import I18n from '../../javascripts/lib/i18n'
 import { resizeContainer, render } from '../../javascripts/lib/helpers'
 import getDefaultTemplate from '../../templates/default'
 import AirtableBase from '../lib/airtable_base'
@@ -35,14 +34,14 @@ class App {
     if (project) {
       this.states.project = project
     } else {
-      this.states.error_message = this.states.error_message || "Project not found"
+      this.states.error_message = this.states.error_message || 'Project not found'
     }
 
     this._renderTemplate()
     return resizeContainer(this._client, MAX_HEIGHT)
   }
 
-  async initializeProject(settings) {
+  async initializeProject (settings) {
     var data = await this._client.get(this._customFieldFinder)
     var projectName = data[this._customFieldFinder]
     var project = await Project.init(
@@ -53,8 +52,8 @@ class App {
     return project
   }
 
-  _airtableBase(api_key, base_id) {
-    return new AirtableBase(api_key, base_id)
+  _airtableBase (apiKey, baseID) {
+    return new AirtableBase(apiKey, baseID)
   }
 
   /**
@@ -63,10 +62,10 @@ class App {
    */
   _handleError (error) {
     console.log(error)
-    this.states.error_message = "An error occurred"
+    this.states.error_message = 'An error occurred'
   }
 
-  _renderTemplate() {
+  _renderTemplate () {
     render('.loader', getDefaultTemplate(this.states))
   }
 }

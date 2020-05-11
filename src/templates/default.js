@@ -1,14 +1,12 @@
-import { templatingLoop as loop, escapeSpecialChars as escape } from '../javascripts/lib/helpers.js'
-import I18n from '../javascripts/lib/i18n.js'
 const Handlebars = require('handlebars')
 
 Handlebars.registerHelper('eq', (a, b, opts) => {
-  if(a === b) {
+  if (a === b) {
     return true
   } else {
     return false
   }
-});
+})
 
 export default function (args) {
   var template = Handlebars.compile(`

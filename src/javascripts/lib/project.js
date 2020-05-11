@@ -1,5 +1,5 @@
 class Project {
-  static async init(airtableBase, slug) {
+  static async init (airtableBase, slug) {
     var data = await airtableBase.findProjectBySlug(slug)
     if (data) {
       var project = new Project(airtableBase, data)
@@ -10,13 +10,13 @@ class Project {
     }
   }
 
-  constructor(airtableBase, data) {
+  constructor (airtableBase, data) {
     this._id = data.id
     this._fields = data.fields
     this._base = airtableBase
   }
 
-  async initializeFields() {
+  async initializeFields () {
     this.airtable_url = 'https://airtable.com/tblne7bw5jfACz2XB/viwF0lQjetG2ICuO2/' + this.id
     this.project_name = this._fields['Project Name']
     this.maintenance_status = this._fields['Maintenance Status']
@@ -34,7 +34,7 @@ class Project {
     this.drive_url = this._fields['Google Drive Folder']
   }
 
-  async _clientNames() {
+  async _clientNames () {
     var clients = await this._findObjectsByIDs(
       this._base.clients(),
       this._fields['Client']
@@ -45,7 +45,7 @@ class Project {
     }).join(', ')
   }
 
-  async _hostingLocation() {
+  async _hostingLocation () {
     var hostingLocations = await this._findObjectsByIDs(
       this._base.hostingLocations(),
       this._fields['Hosted On']
@@ -56,7 +56,7 @@ class Project {
     }
   }
 
-  async _developerNames() {
+  async _developerNames () {
     var developers = await this._findObjectsByIDs(
       this._base.people(),
       this._fields['Developers']
@@ -67,7 +67,7 @@ class Project {
     }).join(', ')
   }
 
-  async _gitRepositories() {
+  async _gitRepositories () {
     var gitRepositories = await this._findObjectsByIDs(
       this._base.gitRepositories(),
       this._fields['Git Repositories']
@@ -78,7 +78,7 @@ class Project {
     })
   }
 
-  async _slackChannels() {
+  async _slackChannels () {
     var slackChannels = await this._findObjectsByIDs(
       this._base.slackChannels(),
       this._fields['Slack Channels']
@@ -89,7 +89,7 @@ class Project {
     })
   }
 
-  async _findObjectsByIDs(objectList, ids) {
+  async _findObjectsByIDs (objectList, ids) {
     if (ids) {
       var objects = await objectList
 
@@ -105,5 +105,3 @@ class Project {
 }
 
 export default Project
-
-

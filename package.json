@@ -18,6 +18,7 @@
     "build:dev": "webpack --mode=development",
     "build": "webpack -p --mode=production",
     "lint": "standard",
+    "lint:fix": "standard --fix",
     "start": "zat server -p ./dist --unattended"
   },
   "devDependencies": {
@@ -58,5 +59,10 @@
   "dependencies": {
     "airtable": "^0.8.1",
     "handlebars": "^4.7.6"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
   }
 }

@@ -2,8 +2,6 @@
 import App from '../src/javascripts/modules/app'
 import Project from '../src/javascripts/lib/project.js'
 
-import AirtableBase from '../src/javascripts/modules/app'
-
 import { CLIENT, AIRTABLE_BASE, AIRTABLE_WITH_NO_PROJECT } from './mocks/mock'
 import createRangePolyfill from './polyfills/createRange'
 
@@ -41,7 +39,7 @@ describe('Example App', () => {
     beforeEach(async (done) => {
       document.body.innerHTML = '<section data-main><img class="loader" src="spinner.gif"/></section>'
       App.prototype._airtableBase = jest.fn(() => {
-        return AIRTABLE_BASE;
+        return AIRTABLE_BASE
       })
       app = new App(CLIENT)
       project = await Project.init(AIRTABLE_BASE, 'my-project')
@@ -90,7 +88,7 @@ describe('Example App', () => {
     beforeEach(async (done) => {
       document.body.innerHTML = '<section data-main><img class="loader" src="spinner.gif"/></section>'
       App.prototype._airtableBase = jest.fn(() => {
-        return AIRTABLE_WITH_NO_PROJECT;
+        return AIRTABLE_WITH_NO_PROJECT
       })
       app = new App(CLIENT)
 
