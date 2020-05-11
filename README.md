@@ -22,13 +22,13 @@ git clone git@github.com:dxw/project_wisdom.git
 ### Install dependencies
 
 ```bash
-npm install
+./scripts/bootstrap
 ```
 
 ### Run the server locally
 
 ```bash
-foreman start
+./scripts/server
 ```
 
 You'll need the Airtable API Key and Base Key (available from the dxw 1Password).
@@ -48,17 +48,17 @@ Click on the `Apps` button on the ticket view to see the app in action!
 Run the following command:
 
 ```
-npm test
+./scripts/test
 ```
 
 ## Building a new version
 
-First, build the app:
+Run the following command:
 
 ```
-npm run build
+./scripts/build
 ```
 
-Then run `zat validate -p dist`, review any errors/warnings, and then run `zat package -p dist`.
-
-Upload the resulting Zip file to Zendesk following the [instructions on the Zendesk website](https://support.zendesk.com/hc/en-us/articles/203662486-Managing-your-installed-apps#topic_x3y_r22_r5).
+This builds the Javascript using [Webpack](https://webpack.js.org/), and generates a zip file of the
+project in `dist/tmp`. You can then upload the resulting Zip file to Zendesk following
+the [instructions on the Zendesk website](https://support.zendesk.com/hc/en-us/articles/203662486-Managing-your-installed-apps#topic_x3y_r22_r5).
