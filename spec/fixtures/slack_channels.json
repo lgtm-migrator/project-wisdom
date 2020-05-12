@@ -1,0 +1,24 @@
+[
+  {
+    "id": "123",
+    "fields": {
+      "Slack Link": "http://amazing.slack.com/1234",
+      "Name": "Something"
+    }
+  },
+  {
+    "id": "456",
+    "fields": {
+      "Slack Link": "http://amazing.slack.com/456",
+      "Name": "Something Else",
+      "Description": "Some Description"
+    }
+  },
+  {
+    "id": "789",
+    "fields": {
+      "Slack Link": "http://amazing.slack.com/789",
+      "Name": "Something Other"
+    }
+  }
+]

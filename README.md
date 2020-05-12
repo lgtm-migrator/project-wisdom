@@ -5,7 +5,11 @@ project field.
 
 ## Prerequisites
 
-To run the app locally, you'll need to have [Zendesk Apps Tools](https://develop.zendesk.com/hc/en-us/articles/360001075048-Installing-and-using-the-Zendesk-apps-tools) installed.
+To run the app locally, you'll need to have the following installed:
+
+* [Zendesk Apps Tools](https://develop.zendesk.com/hc/en-us/articles/360001075048-Installing-and-using-the-Zendesk-apps-tools) installed.
+* [Foreman](http://ddollar.github.io/foreman/)
+* Node.js 12.13.0 or greater
 
 ## Getting started
 
@@ -15,11 +19,27 @@ To run the app locally, you'll need to have [Zendesk Apps Tools](https://develop
 git clone git@github.com:dxw/project_wisdom.git
 ```
 
+### Install dependencies
+
+```bash
+./script/bootstrap
+```
+
+### Copy .zat.example to .zat
+
+```bash
+cp .zat.example .zat
+```
+
+### Add the username and password to the .zat file
+
+Where "username" is your Zendesk login with `/token` appended to the end (e.g. `foo@dxw.com/token`), and "password" is
+available in the dxw 1Password as "Zendesk API Key".
+
 ### Run the server locally
 
 ```bash
-cd project_wisdom
-zat server
+./script/server
 ```
 
 You'll need the Airtable API Key and Base Key (available from the dxw 1Password).
@@ -34,8 +54,29 @@ https://dxw.zendesk.com/agent/tickets/123345?zat=true
 
 Click on the `Apps` button on the ticket view to see the app in action!
 
+## Running the tests
+
+Run the following command:
+
+```
+./script/test
+```
+
 ## Building a new version
 
-Run `zat validate`, review any errors/warnings, and then run `zat package`.
+Run the following command:
 
-Upload the resulting Zip file to Zendeks following the [instructions on the Zendesk website](https://support.zendesk.com/hc/en-us/articles/203662486-Managing-your-installed-apps#topic_x3y_r22_r5).
+```
+./script/build
+```
+
+This builds the Javascript using [Webpack](https://webpack.js.org/), and generates a zip file of the
+project in `dist/tmp`.
+
+## Updating the app
+
+Run the following command:
+
+```
+./script/build --push
+```

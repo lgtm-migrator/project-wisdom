@@ -1,0 +1,7 @@
+{
+  "app": {
+    "name": "Project Wisdom",
+    "short_description": "A Zendesk App that fetches contextual information about a ticket from its custom project field.",
+    "installation_instructions": "Configure the following app settings, then click Install:..."
+  }
+}
