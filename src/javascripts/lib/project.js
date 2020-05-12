@@ -14,10 +14,12 @@ class Project {
     this._id = data.id
     this._fields = data.fields
     this._base = airtableBase
+    this._tableID = 'tblne7bw5jfACz2XB'
+    this._viewID = 'viwF0lQjetG2ICuO2'
   }
 
   async initializeFields () {
-    this.airtable_url = 'https://airtable.com/tblne7bw5jfACz2XB/viwF0lQjetG2ICuO2/' + this.id
+    this.airtable_url = this.airtableURL()
     this.project_name = this._fields['Project Name']
     this.maintenance_status = this._fields['Maintenance Status']
     this.last_reviewed = this._fields['Record last reviewed']
@@ -32,6 +34,15 @@ class Project {
     this.slack_url = this._fields['Slack Link']
     this.trello_url = this._fields['Trello Board']
     this.drive_url = this._fields['Google Drive Folder']
+  }
+
+  airtableURL () {
+    return [
+      'https://airtable.com',
+      this._tableID,
+      this._viewID,
+      this._id
+    ].join('/')
   }
 
   async _clientNames () {

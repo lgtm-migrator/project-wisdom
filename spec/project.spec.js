@@ -8,6 +8,10 @@ describe('project.js', async () => {
     project = await Project.init(AIRTABLE_BASE, 'my-project')
   })
 
+  it('returns the Airtable URL', () => {
+    expect(project.airtable_url).toEqual('https://airtable.com/tblne7bw5jfACz2XB/viwF0lQjetG2ICuO2/123')
+  })
+
   it('returns project data', () => {
     expect(project.project_name).toEqual('My amazing project')
   })
