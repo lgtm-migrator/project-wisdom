@@ -73,8 +73,9 @@ module.exports = {
 
     // Copy over static assets
     new CopyWebpackPlugin([
+      { from: 'src/translations/*', to: '../translations', flatten: true },
       { from: 'src/manifest.json', to: '../', flatten: true },
-      { from: 'src/images/*', to: '.', flatten: true }
+      { from: 'src/images/*', to: '.', flatten: true },
     ]),
 
     new MiniCssExtractPlugin({
