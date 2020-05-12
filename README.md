@@ -60,5 +60,14 @@ Run the following command:
 ```
 
 This builds the Javascript using [Webpack](https://webpack.js.org/), and generates a zip file of the
-project in `dist/tmp`. You can then upload the resulting Zip file to Zendesk following
-the [instructions on the Zendesk website](https://support.zendesk.com/hc/en-us/articles/203662486-Managing-your-installed-apps#topic_x3y_r22_r5).
+project in `dist/tmp`.
+
+## Updating the app
+
+Run the following command:
+
+```
+./scripts/update
+```
+
+You will be prompted for a password, which is available in the dxw 1Password as "Zendesk API Key".
