@@ -25,6 +25,17 @@ git clone git@github.com:dxw/project_wisdom.git
 ./script/bootstrap
 ```
 
+### Copy .zat.example to .zat
+
+```bash
+cp .zat.example .zat
+```
+
+### Add the username and password to the .zat file
+
+Where "username" is your Zendesk login with `/token` appended to the end (e.g. `foo@dxw.com/token`), and "password" is
+available in the dxw 1Password as "Zendesk API Key".
+
 ### Run the server locally
 
 ```bash
@@ -69,5 +80,3 @@ Run the following command:
 ```
 ./script/build --push
 ```
-
-You will be prompted for a password, which is available in the dxw 1Password as "Zendesk API Key".

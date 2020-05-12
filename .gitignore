@@ -4,3 +4,5 @@ settings.yml
 /dist
 .DS_Store
 /coverage
+/.zat
+.zat

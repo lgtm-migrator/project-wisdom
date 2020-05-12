@@ -76,7 +76,7 @@ module.exports = {
       { from: 'src/translations/*', to: '../translations', flatten: true },
       { from: 'src/manifest.json', to: '../', flatten: true },
       { from: 'src/images/*', to: '.', flatten: true },
-      { from: 'src/.zat', to: '../', flatten: true }
+      { from: '.zat', to: '../', flatten: true }
     ]),
 
     new MiniCssExtractPlugin({
