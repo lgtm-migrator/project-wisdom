@@ -17,7 +17,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
-    - name: Install dependencies
+    - name: Set up Ruby 2.6
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6.x
+    - name: Install Zendesk Apps Tooks
+      run: gem install zendesk_apps_tools
+    - name: Install Node dependencies
       run: npm ci
     - name: Create zatfile
       run: |
