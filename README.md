@@ -67,7 +67,7 @@ project in `dist/tmp`.
 Run the following command:
 
 ```
-./script/update
+./script/build --push
 ```
 
 You will be prompted for a password, which is available in the dxw 1Password as "Zendesk API Key".

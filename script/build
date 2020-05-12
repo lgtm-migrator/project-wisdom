@@ -1,4 +1,18 @@
 #!/bin/bash
 
+while [ "$1" ]; do
+  case $1 in
+    "--push")
+      PUSH_TO_ZENDESK=1
+    ;;
+  esac
+  shift
+done
+
 npm run build
-zat package -p dist
+
+if [ "$PUSH_TO_ZENDESK" ]; then
+  zat update -p dist
+else
+  zat package -p dist
+fi
