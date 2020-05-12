@@ -62,21 +62,22 @@ Run the following command:
 ./script/test
 ```
 
-## Building a new version
+## Building and updating the app
 
-Run the following command:
+The repo is set up to automatically push to Zendesk on every `master` push, but in case you want to
+do this manaually, you can run:
 
 ```
 ./script/build
 ```
 
-This builds the Javascript using [Webpack](https://webpack.js.org/), and generates a zip file of the
+to build the app in the `/dist` folder using [Webpack](https://webpack.js.org/), and generate a zip file of the
 project in `dist/tmp`.
 
-## Updating the app
-
-Run the following command:
+To update the app in Zendesk, run:
 
 ```
 ./script/build --push
 ```
+
+This assumes you have the correct credentials in your `.zat` file.
