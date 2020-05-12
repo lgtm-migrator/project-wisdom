@@ -22,13 +22,13 @@ git clone git@github.com:dxw/project_wisdom.git
 ### Install dependencies
 
 ```bash
-./scripts/bootstrap
+./script/bootstrap
 ```
 
 ### Run the server locally
 
 ```bash
-./scripts/server
+./script/server
 ```
 
 You'll need the Airtable API Key and Base Key (available from the dxw 1Password).
@@ -48,7 +48,7 @@ Click on the `Apps` button on the ticket view to see the app in action!
 Run the following command:
 
 ```
-./scripts/test
+./script/test
 ```
 
 ## Building a new version
@@ -56,7 +56,7 @@ Run the following command:
 Run the following command:
 
 ```
-./scripts/build
+./script/build
 ```
 
 This builds the Javascript using [Webpack](https://webpack.js.org/), and generates a zip file of the
@@ -67,7 +67,7 @@ project in `dist/tmp`.
 Run the following command:
 
 ```
-./scripts/update
+./script/update
 ```
 
 You will be prompted for a password, which is available in the dxw 1Password as "Zendesk API Key".
