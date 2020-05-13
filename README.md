@@ -67,7 +67,7 @@ Run the following command:
 ## Building and updating the app
 
 The repo is set up to automatically push to Zendesk on every `master` push, but in case you want to
-do this manaually, you can run:
+do this manually, you can run:
 
 ```
 ./script/build
