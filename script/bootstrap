@@ -1,4 +1,5 @@
 #!/bin/bash
 
+gem install zendesk_apps_tools foreman
 npm install
 npm run build
