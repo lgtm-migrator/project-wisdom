@@ -21,12 +21,6 @@ To run the app locally, you'll need to have the following installed:
 git clone git@github.com:dxw/project_wisdom.git
 ```
 
-### Install dependencies
-
-```bash
-./script/bootstrap
-```
-
 ### Copy .zat.example to .zat
 
 ```bash
@@ -37,6 +31,12 @@ cp .zat.example .zat
 
 Where "username" is your Zendesk login with `/token` appended to the end (e.g. `foo@dxw.com/token`), and "password" is
 available in the dxw 1Password as "Zendesk API Key".
+
+### Install dependencies
+
+```bash
+./script/bootstrap
+```
 
 ### Run the server locally
 
