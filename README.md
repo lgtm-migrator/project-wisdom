@@ -27,7 +27,9 @@ git clone git@github.com:dxw/project_wisdom.git
 cp .zat.example .zat
 ```
 
-### Add the username and password to the .zat file
+### Add the username and password to the .zat file (optional)
+
+Necessary if you want to run the server, but not if all you want is to run the test suite.
 
 Where "username" is your Zendesk login with `/token` appended to the end (e.g. `foo@dxw.com/token`), and "password" is
 available in the dxw 1Password as "Zendesk API Key".
