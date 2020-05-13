@@ -29,7 +29,7 @@ export default function (args) {
       {{/if}}
       {{#if project.staging_url}}
       <li class="staging_url">
-        <strong><i class="fas fa-fw fa-flask"></i> <a href={{ project.staging_url }} target="_blank">View Production</a></strong>
+        <strong><i class="fas fa-fw fa-flask"></i> <a href={{ project.staging_url }} target="_blank">View Staging</a></strong>
       </li>
       {{/if}}
     </ul>
