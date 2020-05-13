@@ -9,8 +9,7 @@ project field.
 
 To run the app locally, you'll need to have the following installed:
 
-* [Zendesk Apps Tools](https://develop.zendesk.com/hc/en-us/articles/360001075048-Installing-and-using-the-Zendesk-apps-tools) installed.
-* [Foreman](http://ddollar.github.io/foreman/)
+* Ruby 2.x
 * Node.js 12.13.0 or greater
 
 ## Getting started
