@@ -12,7 +12,8 @@
       "Trello Board": "http://trello.com/1234",
       "Google Drive Folder": "http://drive.google.com/1234",
       "Git Repositories": ["123", "456"],
-      "Slack Channels": ["123", "456"]
+      "Slack Channels": ["123", "456"],
+      "DNS Management": "Wayne Enterprises"
     }
   }
 ]

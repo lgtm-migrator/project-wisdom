@@ -59,6 +59,12 @@ export default function (args) {
         {{ project.developer_names }}
       </li>
     {{/if}}
+    {{#if project.dns_management}}
+      <li class="dns_management">
+        <strong>DNS Management</strong><br>
+        {{ project.dns_management }}
+      </li>
+    {{/if}}
     </ul>
 
     <div class="links u-mv-sm u-pv-sm u-border-t">

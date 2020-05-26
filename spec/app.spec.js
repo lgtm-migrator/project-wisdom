@@ -62,6 +62,7 @@ describe('Example App', () => {
       expect(document.querySelector('#project_wisdom .maintenance_status').textContent).toMatch(project.maintenance_status)
       expect(document.querySelector('#project_wisdom .hosting_location').textContent).toMatch(project.hosting_location)
       expect(document.querySelector('#project_wisdom .developer_names').textContent).toMatch(project.developer_names)
+      expect(document.querySelector('#project_wisdom .dns_management').textContent).toMatch(project.dns_management)
 
       expect(document.querySelector('#project_wisdom .git_repository_0').innerHTML).toMatch('GitHub repository')
       expect(document.querySelector('#project_wisdom .git_repository_0').innerHTML).toMatch(project.git_repositories[0]['URL'])

@@ -28,6 +28,10 @@ describe('project.js', async () => {
     expect(project.developer_names).toEqual('The Joker, The Riddler')
   })
 
+  it('returns DNS management information', () => {
+    expect(project.dns_management).toEqual('Wayne Enterprises')
+  })
+
   it('returns git repositories', () => {
     expect(project.git_repositories).toEqual([
       {
