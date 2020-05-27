@@ -2,7 +2,7 @@ const Airtable = require('airtable')
 
 class AirtableBase {
   constructor (apiKey, baseID) {
-    this._base = new Airtable({apiKey: apiKey}).base(baseID)
+    this._base = new Airtable({ apiKey: apiKey }).base(baseID)
   }
 
   async findProjectBySlug (slug) {

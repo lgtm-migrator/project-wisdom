@@ -65,19 +65,19 @@ describe('Example App', () => {
       expect(document.querySelector('#project_wisdom .dns_management').textContent).toMatch(project.dns_management)
 
       expect(document.querySelector('#project_wisdom .git_repository_0').innerHTML).toMatch('GitHub repository')
-      expect(document.querySelector('#project_wisdom .git_repository_0').innerHTML).toMatch(project.git_repositories[0]['URL'])
-      expect(document.querySelector('#project_wisdom .git_repository_0').innerHTML).toMatch(project.git_repositories[0]['Repository'])
+      expect(document.querySelector('#project_wisdom .git_repository_0').innerHTML).toMatch(project.git_repositories[0].URL)
+      expect(document.querySelector('#project_wisdom .git_repository_0').innerHTML).toMatch(project.git_repositories[0].Repository)
 
       expect(document.querySelector('#project_wisdom .git_repository_1').innerHTML).toMatch('GovPress git repository')
-      expect(document.querySelector('#project_wisdom .git_repository_1').innerHTML).toMatch(project.git_repositories[1]['URL'])
-      expect(document.querySelector('#project_wisdom .git_repository_1').innerHTML).toMatch(project.git_repositories[1]['Repository'])
+      expect(document.querySelector('#project_wisdom .git_repository_1').innerHTML).toMatch(project.git_repositories[1].URL)
+      expect(document.querySelector('#project_wisdom .git_repository_1').innerHTML).toMatch(project.git_repositories[1].Repository)
 
       expect(document.querySelector('#project_wisdom .slack_channel_0').innerHTML).toMatch(project.slack_channels[0]['Slack Link'])
-      expect(document.querySelector('#project_wisdom .slack_channel_0').innerHTML).toMatch(project.slack_channels[0]['Name'])
+      expect(document.querySelector('#project_wisdom .slack_channel_0').innerHTML).toMatch(project.slack_channels[0].Name)
 
       expect(document.querySelector('#project_wisdom .slack_channel_1').innerHTML).toMatch(project.slack_channels[1]['Slack Link'])
-      expect(document.querySelector('#project_wisdom .slack_channel_1').innerHTML).toMatch(project.slack_channels[1]['Name'])
-      expect(document.querySelector('#project_wisdom .slack_channel_1').innerHTML).toMatch(project.slack_channels[1]['Description'])
+      expect(document.querySelector('#project_wisdom .slack_channel_1').innerHTML).toMatch(project.slack_channels[1].Name)
+      expect(document.querySelector('#project_wisdom .slack_channel_1').innerHTML).toMatch(project.slack_channels[1].Description)
 
       expect(document.querySelector('#project_wisdom .trello_url').innerHTML).toMatch(project.trello_url)
       expect(document.querySelector('#project_wisdom .drive_url').innerHTML).toMatch(project.drive_url)
