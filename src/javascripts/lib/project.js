@@ -49,11 +49,11 @@ class Project {
   async _clientNames () {
     var clients = await this._findObjectsByIDs(
       this._base.clients(),
-      this._fields['Client']
+      this._fields.Client
     )
 
     return clients.map(function (client) {
-      return client.fields['Name']
+      return client.fields.Name
     }).join(', ')
   }
 
@@ -64,18 +64,18 @@ class Project {
     )
 
     if (hostingLocations.length > 0) {
-      return hostingLocations[0].fields['Name']
+      return hostingLocations[0].fields.Name
     }
   }
 
   async _developerNames () {
     var developers = await this._findObjectsByIDs(
       this._base.people(),
-      this._fields['Developers']
+      this._fields.Developers
     )
 
     return developers.map(function (developer) {
-      return developer.fields['Name']
+      return developer.fields.Name
     }).join(', ')
   }
 
