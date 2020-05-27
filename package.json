@@ -27,7 +27,7 @@
     "@zendeskgarden/css-bedrock": "^7.0.3",
     "@zendeskgarden/css-buttons": "^6.0.3",
     "@zendeskgarden/css-callouts": "^3.0.3",
-    "@zendeskgarden/css-forms": "^6.0.5",
+    "@zendeskgarden/css-forms": "^7.0.20",
     "@zendeskgarden/css-grid": "^0.1.6",
     "@zendeskgarden/css-menus": "^9.0.20",
     "@zendeskgarden/css-modals": "^6.1.2",
