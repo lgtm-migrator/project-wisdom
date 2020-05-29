@@ -42,6 +42,7 @@
     "babel-loader": "^7.1.5",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "braces": "^2.3.1",
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^1.0.0",
