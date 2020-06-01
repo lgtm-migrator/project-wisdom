@@ -56,6 +56,7 @@ describe('Example App', () => {
     it('should display the project data', () => {
       expect(document.querySelector('#project_wisdom')).not.toBe(null)
       expect(document.querySelector('#project_wisdom h2').textContent).toBe(project.project_name)
+      expect(document.querySelector('#project_wisdom .runbook_url').innerHTML).toMatch(project.runbook_url)
       expect(document.querySelector('#project_wisdom .wisdom_url').innerHTML).toMatch(project.wisdom_url)
 
       expect(document.querySelector('#project_wisdom .client').textContent).toMatch(project.clients)

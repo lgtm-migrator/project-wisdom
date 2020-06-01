@@ -28,6 +28,7 @@ class Project {
     this.developer_names = await this._developerNames()
     this.git_repositories = await this._gitRepositories()
     this.slack_channels = await this._slackChannels()
+    this.runbook_url = this._fields['Support Runbook']
     this.wisdom_url = this._fields['Project Wisdom']
     this.production_url = this._fields['Production URL']
     this.staging_url = this._fields['Staging URL']

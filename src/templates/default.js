@@ -17,9 +17,14 @@ export default function (args) {
     <h2 class="u-semibold u-fs-lg">{{ project.project_name }}</h2>
 
     <ul class="u-mv-sm">
+      {{#if project.runbook_url}}
+      <li class="runbook_url">
+        <strong><i class="fas fa-fw fa-book"></i> <a href="{{project.runbook_url}}" target="_blank">Support Runbook</a></strong>
+      </li>
+      {{/if}}
       {{#if project.wisdom_url}}
       <li class="wisdom_url">
-        <strong><i class="fas fa-fw fa-brain"></i> <a href="{{project.wisdom_url}}" target="_blank">Read the Project Wisdom</a></strong>
+        <strong><i class="fas fa-fw fa-brain"></i> <a href="{{project.wisdom_url}}" target="_blank">Project Wisdom</a></strong>
       </li>
       {{/if}}
       {{#if project.production_url}}
