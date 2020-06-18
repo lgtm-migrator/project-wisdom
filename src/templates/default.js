@@ -27,16 +27,19 @@ export default function (args) {
         <strong><i class="fas fa-fw fa-brain"></i> <a href="{{project.wisdom_url}}" target="_blank">Project Wisdom</a></strong>
       </li>
       {{/if}}
-      {{#if project.production_url}}
-      <li class="production_url">
-        <strong><i class="fas fa-fw fa-globe"></i> <a href={{ project.production_url }} target="_blank">View Production</a></strong>
+      {{#each project.urls}}
+      <li class="url_{{@index}}">
+        <strong>
+          {{#if (eq this.Type "Production site") }}
+            <i class="fas fa-fw fa-globe"></i>
+          {{/if}}
+          {{#if (eq this.Type "Staging site") }}
+            <i class="fas fa-fw fa-flask"></i>
+          {{/if}}
+          <a href={{ this.URL }} target="_blank" title="{{ this.Type }}">{{ this.URL }}</a>
+        </strong>
       </li>
-      {{/if}}
-      {{#if project.staging_url}}
-      <li class="staging_url">
-        <strong><i class="fas fa-fw fa-flask"></i> <a href={{ project.staging_url }} target="_blank">View Staging</a></strong>
-      </li>
-      {{/if}}
+      {{/each}}
     </ul>
 
     <ul class="u-mv-sm">

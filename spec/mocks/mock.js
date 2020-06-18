@@ -47,6 +47,9 @@ export const AIRTABLE_BASE = {
   },
   async slackChannels () {
     return stubJSON('slack_channels')
+  },
+  async urls () {
+    return stubJSON('urls')
   }
 }
 

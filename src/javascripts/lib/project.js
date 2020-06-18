@@ -32,6 +32,7 @@ class Project {
     this.wisdom_url = this._fields['Project Wisdom']
     this.production_url = this._fields['Production URL']
     this.staging_url = this._fields['Staging URL']
+    this.urls = await this._urls()
     this.slack_url = this._fields['Slack Link']
     this.trello_url = this._fields['Trello Board']
     this.drive_url = this._fields['Google Drive Folder']
@@ -98,6 +99,17 @@ class Project {
     )
 
     return slackChannels.map(function (channel) {
+      return channel.fields
+    })
+  }
+
+  async _urls () {
+    var urls = await this._findObjectsByIDs(
+      this._base.urls(),
+      this._fields.Urls
+    )
+
+    return urls.map(function (channel) {
       return channel.fields
     })
   }
