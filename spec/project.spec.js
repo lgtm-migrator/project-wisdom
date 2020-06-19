@@ -60,4 +60,23 @@ describe('project.js', async () => {
       }
     ])
   })
+
+  it('returns Urls', () => {
+    expect(project.urls).toEqual([
+      {
+        URL: 'http://british-business-bank.staging.dxw.net/',
+        Projects: [
+          'recCqv0jYswM2gait'
+        ],
+        Type: 'Staging site'
+      },
+      {
+        URL: 'http://britishantarcticterritory.org.uk',
+        Projects: [
+          'rec2dPrbprM9t8Fce'
+        ],
+        Type: 'Production site'
+      }
+    ])
+  })
 })

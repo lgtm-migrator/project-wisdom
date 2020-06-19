@@ -32,6 +32,10 @@ class AirtableBase {
   async slackChannels () {
     return this._base('Slack Channels').select().all()
   }
+
+  async urls () {
+    return this._base('Urls').select().all()
+  }
 }
 
 export default AirtableBase
