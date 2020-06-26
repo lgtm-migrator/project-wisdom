@@ -50,7 +50,7 @@
     "jest": "^23.4.0",
     "mini-css-extract-plugin": "^0.4.1",
     "postcss-import": "^11.1.0",
-    "postcss-loader": "^2.1.6",
+    "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^5.2.1",
     "precss": "^4.0.0",
     "standard": "^14.3.4",
