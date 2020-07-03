@@ -8,7 +8,9 @@ const devDependencies = require('./package.json').devDependencies
 // this function reads Zendesk Garden npm dependencies from package.json and
 // creates a jsDelivr url
 const zendeskGardenJsDelivrUrl = (function () {
-  const pkg = Object.keys(devDependencies).filter(item => item.includes('@zendeskgarden/css'))
+  const pkg = Object.keys(devDependencies).filter((item) =>
+    item.includes('@zendeskgarden/css')
+  )
   const getPkgName = (url, pkg) => {
     const version = devDependencies[pkg]
       .replace(/^[\^~]/g, '')
@@ -16,16 +18,14 @@ const zendeskGardenJsDelivrUrl = (function () {
     url = `${url}npm/${pkg}@${version},`
     return url
   }
-  return pkg.length && pkg.reduce(
-    getPkgName,
-    'https://cdn.jsdelivr.net/combine/'
-  ).slice(0, -1)
-}())
+  return (
+    pkg.length &&
+    pkg.reduce(getPkgName, 'https://cdn.jsdelivr.net/combine/').slice(0, -1)
+  )
+})()
 
 const externalAssets = {
-  css: [
-    zendeskGardenJsDelivrUrl
-  ],
+  css: [zendeskGardenJsDelivrUrl],
   js: [
     'https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js',
     'https://kit.fontawesome.com/999bfae655.js'
@@ -72,20 +72,23 @@ module.exports = {
     new CleanWebpackPlugin(['dist/*']),
 
     // Copy over static assets
-    new CopyWebpackPlugin([
-      { from: 'src/translations/*', to: '../translations', flatten: true },
-      { from: 'src/manifest.json', to: '../', flatten: true },
-      { from: 'src/images/*', to: '.', flatten: true },
-      { from: '.zat', to: '../', flatten: true }
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'src/translations/*', to: '../translations', flatten: true },
+        { from: 'src/manifest.json', to: '../', flatten: true },
+        { from: 'src/images/*', to: '.', flatten: true },
+        { from: '.zat', to: '../', flatten: true }
+      ]
+    }),
 
     new MiniCssExtractPlugin({
       filename: '[name].css'
     }),
 
     new HtmlWebpackPlugin({
-      warning: 'AUTOMATICALLY GENERATED FROM ./src/templates/iframe.html - DO NOT MODIFY THIS FILE DIRECTLY',
-      vendorCss: externalAssets.css.filter(path => !!path),
+      warning:
+        'AUTOMATICALLY GENERATED FROM ./src/templates/iframe.html - DO NOT MODIFY THIS FILE DIRECTLY',
+      vendorCss: externalAssets.css.filter((path) => !!path),
       vendorJs: externalAssets.js,
       template: './src/templates/iframe.html',
       filename: 'iframe.html'
