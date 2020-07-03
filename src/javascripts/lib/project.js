@@ -106,7 +106,7 @@ class Project {
   async _urls () {
     var urls = await this._findObjectsByIDs(
       this._base.urls(),
-      this._fields.Urls
+      this._fields.URLs
     )
 
     return urls.map(function (channel) {

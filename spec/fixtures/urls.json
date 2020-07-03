@@ -3,33 +3,39 @@
         "id": "rec368HRI9tWxIgkk",
         "fields": {
             "URL": "http://british-business-bank.staging.dxw.net/",
+            "Domain": "british-business-bank.staging.dxw.net",
             "Projects": [
                 "recCqv0jYswM2gait"
             ],
-            "Type": "Staging site"
+            "Type": "Staging",
+            "Friendly Name": "Staging"
         },
         "createdTime": "2020-06-18T07:58:20.000Z"
     },
     {
         "id": "rec4aGLpEojsa4vdi",
         "fields": {
-            "URL": "http://britishantarcticterritory.org.uk",
+            "URL": "http://britishantarcticterritory.org.uk/",
+            "Domain": "britishantarcticterritory.org.uk",
             "Projects": [
                 "rec2dPrbprM9t8Fce"
             ],
-            "Type": "Production site"
+            "Type": "Production",
+            "Friendly Name": "Production"
         },
         "createdTime": "2020-06-18T08:13:52.000Z"
     },
     {
         "id": "rec3NCPysWUK0Mh9y",
         "fields": {
-            "URL": "http://homeownership.staging.dxw.net",
+            "URL": "http://homeownership.staging.dxw.net/",
+            "Domain": "homeownership.staging.dxw.net",
             "Projects": [
                 "recCqv0jYswM2gait",
                 "recKnNQATigYkc35g"
             ],
-            "Type": "Staging site"
+            "Type": "Staging",
+            "Friendly Name": "Staging"
         },
         "createdTime": "2020-06-18T07:58:20.000Z"
     }

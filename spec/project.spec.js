@@ -65,17 +65,21 @@ describe('project.js', async () => {
     expect(project.urls).toEqual([
       {
         URL: 'http://british-business-bank.staging.dxw.net/',
+        Domain: 'british-business-bank.staging.dxw.net',
         Projects: [
           'recCqv0jYswM2gait'
         ],
-        Type: 'Staging site'
+        Type: 'Staging',
+        'Friendly Name': 'Staging'
       },
       {
-        URL: 'http://britishantarcticterritory.org.uk',
+        URL: 'http://britishantarcticterritory.org.uk/',
+        Domain: 'britishantarcticterritory.org.uk',
         Projects: [
           'rec2dPrbprM9t8Fce'
         ],
-        Type: 'Production site'
+        Type: 'Production',
+        'Friendly Name': 'Production'
       }
     ])
   })
