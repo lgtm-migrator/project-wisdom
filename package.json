@@ -44,7 +44,7 @@
     "babel-preset-env": "^1.7.0",
     "braces": "^2.3.1",
     "clean-webpack-plugin": "^0.1.19",
-    "copy-webpack-plugin": "^5.1.1",
+    "copy-webpack-plugin": "^6.0.3",
     "css-loader": "^1.0.0",
     "html-webpack-plugin": "^4.3.0",
     "jest": "^23.4.0",
