@@ -67,10 +67,10 @@ describe('Example App', () => {
       expect(projectWisdom.querySelector('.developer_names').textContent).toMatch(project.developer_names)
       expect(projectWisdom.querySelector('.dns_management').textContent).toMatch(project.dns_management)
 
-      expect(projectWisdom.querySelector('.url_0').innerHTML).toMatch(project.urls[0].URL)
-      expect(projectWisdom.querySelector('.url_0').innerHTML).toMatch('Staging site')
-      expect(projectWisdom.querySelector('.url_1').innerHTML).toMatch(project.urls[1].URL)
-      expect(projectWisdom.querySelector('.url_1').innerHTML).toMatch('Production site')
+      expect(projectWisdom.querySelector('.url_0').innerHTML).toMatch(project.urls[0].Domain)
+      expect(projectWisdom.querySelector('.url_0').innerHTML).toMatch('Staging')
+      expect(projectWisdom.querySelector('.url_1').innerHTML).toMatch(project.urls[1].Domain)
+      expect(projectWisdom.querySelector('.url_1').innerHTML).toMatch('Production')
 
       expect(projectWisdom.querySelector('.git_repository_0').innerHTML).toMatch('GitHub repository')
       expect(projectWisdom.querySelector('.git_repository_0').innerHTML).toMatch(project.git_repositories[0].URL)

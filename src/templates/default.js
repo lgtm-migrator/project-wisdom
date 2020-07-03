@@ -30,13 +30,14 @@ export default function (args) {
       {{#each project.urls}}
       <li class="url_{{@index}}">
         <strong>
-          {{#if (eq this.Type "Production site") }}
+          {{#if (eq this.Type "Production") }}
+            <i class="fas fa-fw fa-rocket"></i>
+          {{else if (eq this.Type "Staging") }}
+            <i class="fas fa-fw fa-flask"></i>
+          {{else}}
             <i class="fas fa-fw fa-globe"></i>
           {{/if}}
-          {{#if (eq this.Type "Staging site") }}
-            <i class="fas fa-fw fa-flask"></i>
-          {{/if}}
-          <a href={{ this.URL }} target="_blank" title="{{ this.Type }}">{{ this.URL }}</a>
+          <a href={{ this.URL }} target="_blank">{{ lookup this 'Friendly Name' }}<br><small>{{ lookup this 'Display Domain' }}</small></a>
         </strong>
       </li>
       {{/each}}
