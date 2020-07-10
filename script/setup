@@ -6,7 +6,7 @@ cd "$(dirname "$0")/.."
 
 script/bootstrap
 
-echo "==> Copying .zat.example to .zat!"
+echo "==> Copying .zat.example to .zat…"
 cp .zat.example .zat
 
 script/build
