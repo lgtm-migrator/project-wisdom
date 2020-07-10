@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -e
+
+cd "$(dirname "$0")/.."
+
 while [ "$1" ]; do
   case $1 in
     "--push")
@@ -9,10 +13,14 @@ while [ "$1" ]; do
   shift
 done
 
+echo "==> Building package…"
+
 npm run build
 
 if [ "$PUSH_TO_ZENDESK" ]; then
-  zat update -p dist
+  echo "==> Packaging and pushing to Zendesk…"
+  bundle exec zat update -p dist
 else
-  zat package -p dist
+  echo "==> Packaging for local ZAT…"
+  bundle exec zat package -p dist
 fi

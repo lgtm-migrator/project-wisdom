@@ -20,10 +20,10 @@ To run the app locally, you'll need to have the following installed:
 git clone git@github.com:dxw/project_wisdom.git
 ```
 
-### Copy .zat.example to .zat
+### Run the setup task
 
 ```bash
-cp .zat.example .zat
+./script/setup
 ```
 
 ### Add the username and password to the .zat file (optional)
@@ -33,16 +33,10 @@ Necessary if you want to run the server, but not if all you want is to run the t
 Where "username" is your Zendesk login with `/token` appended to the end (e.g. `foo@dxw.com/token`), and "password" is
 available in the dxw 1Password as "Zendesk API Key".
 
-### Install dependencies
+## Running the server locally
 
 ```bash
-./script/bootstrap
-```
-
-### Run the server locally
-
-```bash
-./script/server
+script/server
 ```
 
 You'll need the Airtable API Key and Base Key (available from the dxw 1Password).
@@ -59,28 +53,28 @@ Click on the `Apps` button on the ticket view to see the app in action!
 
 ## Running the tests
 
-Run the following command:
+Run the following script:
 
 ```
-./script/test
+script/test
 ```
 
 ## Building and updating the app
 
-The repo is set up to automatically push to Zendesk on every `master` push, but in case you want to
-do this manually, you can run:
+To rebuild the app locally following changes, run
 
 ```
-./script/build
+script/build
 ```
 
 to build the app in the `/dist` folder using [Webpack](https://webpack.js.org/), and generate a zip file of the
 project in `dist/tmp`.
 
-To update the app in Zendesk, run:
+The repo is set up to automatically push to Zendesk on every `master` push, but in case you want to
+do this manually and push the updated package to Zendesk, you can run:
 
 ```
-./script/build --push
+script/build --push
 ```
 
 This assumes you have the correct credentials in your `.zat` file.

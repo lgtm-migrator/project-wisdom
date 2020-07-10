@@ -17,18 +17,14 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
-    - name: Set up Ruby 2.6
+    - name: Set up Ruby
       uses: actions/setup-ruby@v1
-      with:
-        ruby-version: 2.6.x
-    - name: Install Zendesk Apps Tooks
-      run: gem install zendesk_apps_tools
-    - name: Install Node dependencies
-      run: npm ci
+    - name: Install dependencies
+      run: script/bootstrap
     - name: Create zatfile
       run: |
         cp .zat.example .zat
         sed -i -e "s|USERNAME_GOES_HERE|$ZENDESK_USERNAME|g" .zat
         sed -i -e "s|PASSWORD_GOES_HERE|$ZENDESK_PASSWORD|g" .zat
     - name: Build and push to Zendesk
-      run: ./script/build --push
+      run: script/build --push
