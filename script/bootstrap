@@ -1,5 +1,13 @@
 #!/bin/bash
 
-gem install zendesk_apps_tools foreman
-npm install
-npm run build
+set -e
+
+cd "$(dirname "$0")/.."
+
+echo "==> Installing gem dependencies…"
+bundle check >/dev/null 2>&1  || {
+  bundle install --quiet
+}
+
+echo "==> Installing npm dependencies…"
+npm install --silent

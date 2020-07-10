@@ -11,7 +11,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
+    - name: Set up Ruby
+      uses: actions/setup-ruby@v1
     - name: Install dependencies
-      run: npm ci
+      run: script/bootstrap
     - name: Run tests
-      run: ./script/test
+      run: script/test

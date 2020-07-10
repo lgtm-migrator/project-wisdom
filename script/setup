@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+script/bootstrap
+
+script/build
+
+echo "==> App is now ready to go!"

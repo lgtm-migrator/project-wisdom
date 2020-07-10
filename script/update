@@ -4,6 +4,4 @@ set -e
 
 cd "$(dirname "$0")/.."
 
-script/update
-
-bundle exec foreman start
+script/bootstrap
