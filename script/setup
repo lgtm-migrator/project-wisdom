@@ -6,6 +6,9 @@ cd "$(dirname "$0")/.."
 
 script/bootstrap
 
+echo "==> Copying .zat.example to .zat!"
+cp .zat.example .zat
+
 script/build
 
 echo "==> App is now ready to go!"
