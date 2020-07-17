@@ -17,5 +17,8 @@ jobs:
       run: script/bootstrap
     - name: Run tests
       run: script/test
+    - name: Create zatfile
+      run: |
+        cp .zat.example .zat
     - name: Run build
       run: script/build
