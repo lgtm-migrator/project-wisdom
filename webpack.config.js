@@ -1,9 +1,9 @@
 const path = require('path')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const devDependencies = require('./package.json').devDependencies
+const { devDependencies } = require('./package.json')
 
 // this function reads Zendesk Garden npm dependencies from package.json and
 // creates a jsDelivr url
@@ -68,8 +68,13 @@ module.exports = {
   },
 
   plugins: [
-    // Empties the dist folder
-    new CleanWebpackPlugin(['dist/*']),
+    new CleanWebpackPlugin({
+      verbose: true,
+      cleanOnceBeforeBuildPatterns: [
+        '**/*',
+        path.join(__dirname, 'dist/**/*')
+      ]
+    }),
 
     // Copy over static assets
     new CopyWebpackPlugin({
