@@ -98,7 +98,6 @@ PLATFORMS
 
 DEPENDENCIES
   foreman (~> 0.87.1)
-  zendesk_apps_support (~> 4.29)
   zendesk_apps_tools (~> 3.8)
 
 BUNDLED WITH
