@@ -32,6 +32,10 @@ describe('project.js', async () => {
     expect(project.dns_management).toEqual('Wayne Enterprises')
   })
 
+  it('returns account manager name', () => {
+    expect(project.account_manager).toEqual('Sam Smith')
+  })
+
   it('returns git repositories', () => {
     expect(project.git_repositories).toEqual([
       {

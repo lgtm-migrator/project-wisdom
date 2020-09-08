@@ -37,6 +37,7 @@ class Project {
     this.trello_url = this._fields['Trello Board']
     this.drive_url = this._fields['Google Drive Folder']
     this.dns_management = this._fields['DNS Management']
+    this.account_manager = this._fields['Account Manager']
   }
 
   airtableURL () {
