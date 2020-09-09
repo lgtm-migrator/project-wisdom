@@ -66,6 +66,7 @@ describe('Example App', () => {
       expect(projectWisdom.querySelector('.hosting_location').textContent).toMatch(project.hosting_location)
       expect(projectWisdom.querySelector('.developer_names').textContent).toMatch(project.developer_names)
       expect(projectWisdom.querySelector('.dns_management').textContent).toMatch(project.dns_management)
+      expect(projectWisdom.querySelector('.account_manager').textContent).toMatch(project.account_manager)
 
       expect(projectWisdom.querySelector('.url_0').innerHTML).toMatch(project.urls[0].Domain)
       expect(projectWisdom.querySelector('.url_0').innerHTML).toMatch('Staging')

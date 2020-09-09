@@ -78,3 +78,13 @@ script/build --push
 ```
 
 This assumes you have the correct credentials in your `.zat` file.
+
+### Adding new fields
+
+When adding new fields, these are the files you will need to look at:
+`default.js`, `project.js`
+
+For the relating spec changes:
+`app.spec.js`, `project.spec.js`
+
+`my-project.json` is the test data used within the spec files.
