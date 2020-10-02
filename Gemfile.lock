@@ -15,7 +15,7 @@ GEM
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.5.1)
     ffi (1.9.25)
-    foreman (0.87.1)
+    foreman (0.87.2)
     hitimes (2.0.0)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
@@ -97,7 +97,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  foreman (~> 0.87.1)
+  foreman (~> 0.87)
   zendesk_apps_tools (~> 3.8)
 
 BUNDLED WITH
