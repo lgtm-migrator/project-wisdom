@@ -33,7 +33,7 @@ describe('project.js', async () => {
   })
 
   it('returns account manager name', () => {
-    expect(project.account_manager).toEqual('Sam Smith')
+    expect(project.account_manager).toEqual('King Tut')
   })
 
   it('returns git repositories', () => {
