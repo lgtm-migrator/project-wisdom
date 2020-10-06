@@ -37,7 +37,7 @@ class Project {
     this.trello_url = this._fields['Trello Board']
     this.drive_url = this._fields['Google Drive Folder']
     this.dns_management = this._fields['DNS Management']
-    this.account_manager = this._fields['Account Manager']
+    this.account_manager = await this._accountManagerName()
   }
 
   airtableURL () {
@@ -80,6 +80,15 @@ class Project {
     return developers.map(function (developer) {
       return developer.fields.Name
     }).join(', ')
+  }
+
+  async _accountManagerName () {
+    var accountManager = await this._findObjectsByIDs(
+      this._base.people(),
+      this._fields['Account Manager']
+    )
+
+    return accountManager[0].fields.Name
   }
 
   async _gitRepositories () {

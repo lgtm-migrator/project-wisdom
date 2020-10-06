@@ -16,7 +16,7 @@
       "Slack Channels": ["123", "456"],
       "URLs": ["rec368HRI9tWxIgkk", "rec4aGLpEojsa4vdi"],
       "DNS Management": "Wayne Enterprises",
-      "Account Manager": "Sam Smith"
+      "Account Manager": ["789"]
     }
   }
 ]
