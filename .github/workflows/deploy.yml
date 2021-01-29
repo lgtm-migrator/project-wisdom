@@ -18,7 +18,7 @@ jobs:
       with:
         node-version: 12.x
     - name: Set up Ruby
-      uses: actions/setup-ruby@v1
+      uses: ruby/setup-ruby@v1
     - name: Install dependencies
       run: script/bootstrap
     - name: Create zatfile
