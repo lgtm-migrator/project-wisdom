@@ -18,18 +18,18 @@ export default function (args) {
 
     <ul class="u-mv-sm">
       {{#if project.runbook_url}}
-      <li class="runbook_url">
-        <strong><i class="fas fa-fw fa-book"></i> <a href="{{project.runbook_url}}" target="_blank">Support Runbook</a></strong>
+      <li class="pw_list_item pw_list_item__url runbook_url">
+        <i class="fas fa-fw fa-book"></i> <b><a href="{{project.runbook_url}}" target="_blank">Support Runbook</a></b>
       </li>
       {{/if}}
       {{#if project.wisdom_url}}
-      <li class="wisdom_url">
-        <strong><i class="fas fa-fw fa-brain"></i> <a href="{{project.wisdom_url}}" target="_blank">Project Wisdom</a></strong>
+      <li class="pw_list_item pw_list_item__url wisdom_url">
+        <i class="fas fa-fw fa-brain"></i> <b><a href="{{project.wisdom_url}}" target="_blank">Project Wisdom</a></b>
       </li>
       {{/if}}
       {{#each project.urls}}
-      <li class="url_{{@index}}">
-        <strong>
+      <li class="pw_list_item pw_list_item__url url_{{@index}}">
+
           {{#if (eq this.Type "Production") }}
             <i class="fas fa-fw fa-rocket"></i>
           {{else if (eq this.Type "Staging") }}
@@ -37,46 +37,46 @@ export default function (args) {
           {{else}}
             <i class="fas fa-fw fa-globe"></i>
           {{/if}}
-          <a href={{ this.URL }} target="_blank">{{ lookup this 'Friendly Name' }}<br><small>{{ lookup this 'Display Domain' }}</small></a>
-        </strong>
+
+        <a href={{ this.URL }} target="_blank"><b>{{ lookup this 'Friendly Name' }}<br></b><small>{{ lookup this 'Display Domain' }}</small></a>
       </li>
       {{/each}}
     </ul>
 
     <ul class="u-mv-sm">
     {{#if project.clients}}
-      <li class="client">
-        <strong>Client</strong><br>
+      <li class="pw_list_item pw_list_item__field client">
+        <b>Client:</b><br>
         {{ project.clients }}
       </li>
     {{/if}}
     {{#if project.maintenance_status}}
-      <li class="maintenance_status">
-        <strong>Maintenance Status</strong><br>
+      <li class="pw_list_item pw_list_item__field maintenance_status">
+        <b>Maintenance Status:</b><br>
         {{ project.maintenance_status }}
       </li>
     {{/if}}
     {{#if project.hosting_location}}
-      <li class="hosting_location">
-        <strong>Hosting Location</strong><br>
+      <li class="pw_list_item pw_list_item__field hosting_location">
+        <b>Hosting Location:</b><br>
         {{ project.hosting_location }}
       </li>
     {{/if}}
     {{#if project.developer_names}}
-      <li class="developer_names">
-        <strong>Developers</strong><br>
+      <li class="pw_list_item pw_list_item__field developer_names">
+        <b>Developers:</b><br>
         {{ project.developer_names }}
       </li>
     {{/if}}
     {{#if project.dns_management}}
-      <li class="dns_management">
-        <strong>DNS Management</strong><br>
+      <li class="pw_list_item pw_list_item__field dns_management">
+        <b>DNS Management:</b><br>
         {{ project.dns_management }}
       </li>
     {{/if}}
     {{#if project.account_manager}}
-      <li class="account_manager">
-        <strong>Account Manager</strong><br>
+      <li class="pw_list_item pw_list_item__field account_manager">
+        <b>Account Manager:</b><br>
         {{ project.account_manager }}
       </li>
     {{/if}}
@@ -85,7 +85,7 @@ export default function (args) {
     <div class="links u-mv-sm u-pv-sm u-border-t">
       <ul>
         {{#each project.git_repositories}}
-        <li class="git_repository_{{@index}}">
+        <li class="pw_list_item pw_list_item__extended git_repository_{{@index}}">
           {{#if (eq this.Domain 'github.com')}}
             <i class="fab fa-fw fa-github" title="GitHub repository"></i>
           {{/if}}
@@ -96,7 +96,7 @@ export default function (args) {
         </li>
         {{/each}}
         {{#each project.slack_channels}}
-          <li class="slack_channel_{{@index}}">
+          <li class="pw_list_item pw_list_item__extended slack_channel_{{@index}}">
             <i class="fab fa-fw fa-slack" title="Slack channel"></i>
             <a href="{{ lookup this 'Slack Link' }}" target="_blank">
               #{{ this.Name }}
@@ -107,12 +107,12 @@ export default function (args) {
           </li>
         {{/each}}
         {{#if project.trello_url}}
-        <li class="trello_url">
+        <li class="pw_list_item pw_list_item__extended trello_url">
           <i class="fab fa-fw fa-trello"></i> <a href="{{project.trello_url}}" target="_blank">Trello board</a>
         </li>
         {{/if}}
         {{#if project.drive_url}}
-        <li class="drive_url">
+        <li class="pw_list_item pw_list_item__extended drive_url">
           <i class="fab fa-fw fa-google-drive"></i> <a href="{{project.drive_url}}" target="_blank">Google Drive folder</a>
         </li>
         {{/if}}
