@@ -20,7 +20,7 @@
     "test": "jest",
     "watch": "webpack --watch --mode=development",
     "build:dev": "webpack --mode=development",
-    "build": "webpack -p --mode=production",
+    "build": "webpack --mode=production",
     "lint": "standard",
     "lint:fix": "standard --fix"
   },
