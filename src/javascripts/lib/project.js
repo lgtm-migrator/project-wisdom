@@ -88,7 +88,9 @@ class Project {
       this._fields['Account Manager']
     )
 
-    return accountManager[0].fields.Name
+    if (accountManager.length > 0) {
+      return accountManager[0].fields.Name
+    }
   }
 
   async _gitRepositories () {
