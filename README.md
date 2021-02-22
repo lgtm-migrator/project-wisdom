@@ -70,7 +70,7 @@ script/build
 to build the app in the `/dist` folder using [Webpack](https://webpack.js.org/), and generate a zip file of the
 project in `dist/tmp`.
 
-The repo is set up to automatically push to Zendesk on every `master` push, but in case you want to
+The repo is set up to automatically push to Zendesk on every `main` push, but in case you want to
 do this manually and push the updated package to Zendesk, you can run:
 
 ```
