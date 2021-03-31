@@ -59,7 +59,9 @@ GEM
     loofah (2.9.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mimemagic (0.3.6)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_portile2 (2.5.0)
     multipart-post (2.1.1)
     mustermann (1.1.1)
@@ -73,6 +75,7 @@ GEM
       rack
     rack-protection (2.1.0)
       rack
+    rake (13.0.3)
     rb-fsevent (0.10.4)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
