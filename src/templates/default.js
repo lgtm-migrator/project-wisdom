@@ -9,7 +9,7 @@ Handlebars.registerHelper('eq', (a, b, opts) => {
 })
 
 export default function (args) {
-  var template = Handlebars.compile(`
+  const template = Handlebars.compile(`
   <div id="project_wisdom">
     {{#if error_message}}
     <p>{{ error_message }}</p>

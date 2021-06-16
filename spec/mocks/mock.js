@@ -1,6 +1,6 @@
 const stubJSON = function (filename) {
   return new Promise((resolve) => {
-    var json = require('../fixtures/' + filename + '.json')
+    const json = require('../fixtures/' + filename + '.json')
     resolve(json)
   })
 }
@@ -30,7 +30,7 @@ export const CLIENT = {
 
 export const AIRTABLE_BASE = {
   async findProjectBySlug (slug) {
-    var result = await stubJSON(slug)
+    const result = await stubJSON(slug)
     return result[0]
   },
   async clients () {

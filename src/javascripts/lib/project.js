@@ -1,8 +1,8 @@
 class Project {
   static async init (airtableBase, slug) {
-    var data = await airtableBase.findProjectBySlug(slug)
+    const data = await airtableBase.findProjectBySlug(slug)
     if (data) {
-      var project = new Project(airtableBase, data)
+      const project = new Project(airtableBase, data)
       await project.initializeFields()
       return project
     } else {
@@ -50,7 +50,7 @@ class Project {
   }
 
   async _clientNames () {
-    var clients = await this._findObjectsByIDs(
+    const clients = await this._findObjectsByIDs(
       this._base.clients(),
       this._fields.Client
     )
@@ -61,7 +61,7 @@ class Project {
   }
 
   async _hostingLocation () {
-    var hostingLocations = await this._findObjectsByIDs(
+    const hostingLocations = await this._findObjectsByIDs(
       this._base.hostingLocations(),
       this._fields['Hosted On']
     )
@@ -72,7 +72,7 @@ class Project {
   }
 
   async _developerNames () {
-    var developers = await this._findObjectsByIDs(
+    const developers = await this._findObjectsByIDs(
       this._base.people(),
       this._fields.Developers
     )
@@ -83,7 +83,7 @@ class Project {
   }
 
   async _accountManagerName () {
-    var accountManager = await this._findObjectsByIDs(
+    const accountManager = await this._findObjectsByIDs(
       this._base.people(),
       this._fields['Account Manager']
     )
@@ -94,7 +94,7 @@ class Project {
   }
 
   async _gitRepositories () {
-    var gitRepositories = await this._findObjectsByIDs(
+    const gitRepositories = await this._findObjectsByIDs(
       this._base.gitRepositories(),
       this._fields['Git Repositories']
     )
@@ -105,7 +105,7 @@ class Project {
   }
 
   async _slackChannels () {
-    var slackChannels = await this._findObjectsByIDs(
+    const slackChannels = await this._findObjectsByIDs(
       this._base.slackChannels(),
       this._fields['Slack Channels']
     )
@@ -116,7 +116,7 @@ class Project {
   }
 
   async _urls () {
-    var urls = await this._findObjectsByIDs(
+    const urls = await this._findObjectsByIDs(
       this._base.urls(),
       this._fields.URLs
     )
@@ -128,7 +128,7 @@ class Project {
 
   async _findObjectsByIDs (objectList, ids) {
     if (ids) {
-      var objects = await objectList
+      const objects = await objectList
 
       return ids.map(function (id) {
         return objects.find(function (client) {

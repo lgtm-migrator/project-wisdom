@@ -42,9 +42,9 @@ class App {
   }
 
   async initializeProject (settings) {
-    var data = await this._client.get(this._customFieldFinder)
-    var projectName = data[this._customFieldFinder]
-    var project = await Project.init(
+    const data = await this._client.get(this._customFieldFinder)
+    const projectName = data[this._customFieldFinder]
+    const project = await Project.init(
       this._airtableBase(settings.airtable_api_key, settings.airtable_base_id),
       projectName
     )

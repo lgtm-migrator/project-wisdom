@@ -6,7 +6,7 @@ class AirtableBase {
   }
 
   async findProjectBySlug (slug) {
-    var result = await this._base('Projects').select({
+    const result = await this._base('Projects').select({
       filterByFormula: '({Zendesk Slug}="' + slug + '")'
     }).all()
 
