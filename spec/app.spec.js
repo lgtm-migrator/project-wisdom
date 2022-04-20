@@ -14,15 +14,13 @@ describe('Example App', () => {
   let project
 
   describe('Initialization Failure', () => {
-    beforeEach((done) => {
+    beforeEach(async () => {
       document.body.innerHTML = '<section data-main><img class="loader" src="spinner.gif"/></section>'
       jest.spyOn(CLIENT, 'metadata').mockReturnValueOnce(Promise.reject(new Error('a fake error')))
 
       app = new App(CLIENT)
 
-      app.initializePromise.then(() => {
-        done()
-      })
+      await app.initializePromise
     })
 
     afterEach(() => {
@@ -36,7 +34,7 @@ describe('Example App', () => {
   })
 
   describe('Initialization Success', () => {
-    beforeEach(async (done) => {
+    beforeEach(async () => {
       document.body.innerHTML = '<section data-main><img class="loader" src="spinner.gif"/></section>'
       App.prototype._airtableBase = jest.fn(() => {
         return AIRTABLE_BASE
@@ -44,9 +42,7 @@ describe('Example App', () => {
       app = new App(CLIENT)
       project = await Project.init(AIRTABLE_BASE, 'my-project')
 
-      app.initializePromise.then(() => {
-        done()
-      })
+      await app.initializePromise
     })
 
     it('initialize a project', () => {
@@ -95,16 +91,14 @@ describe('Example App', () => {
   })
 
   describe('when project is not present', () => {
-    beforeEach(async (done) => {
+    beforeEach(async () => {
       document.body.innerHTML = '<section data-main><img class="loader" src="spinner.gif"/></section>'
       App.prototype._airtableBase = jest.fn(() => {
         return AIRTABLE_WITH_NO_PROJECT
       })
       app = new App(CLIENT)
 
-      app.initializePromise.then(() => {
-        done()
-      })
+      await app.initializePromise
     })
 
     it('should show an error message on the page', () => {
