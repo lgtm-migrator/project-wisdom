@@ -1,3 +1,5 @@
+const fetch = require('node-fetch')
+
 module.exports = {
   verbose: true,
   testURL: 'http://localhost/',
@@ -5,7 +7,9 @@ module.exports = {
   globals: {
     ZAFClient: {
       init: () => {}
-    }
+    },
+    fetch: fetch,
+    Request: fetch.Request
   },
   coveragePathIgnorePatterns: [
     '<rootDir>/spec'
