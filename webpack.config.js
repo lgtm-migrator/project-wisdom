@@ -35,7 +35,7 @@ const externalAssets = {
 module.exports = {
   entry: {
     app: [
-      'babel-polyfill',
+      '@babel/polyfill',
       './src/javascripts/locations/ticket_sidebar.js',
       './src/index.css'
     ]
