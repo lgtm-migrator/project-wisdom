@@ -72,5 +72,8 @@
     "env": [
       "jest"
     ]
+  },
+  "resolutions": {
+    "postcss": "^7.0.36"
   }
 }
