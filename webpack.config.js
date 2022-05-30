@@ -84,10 +84,10 @@ module.exports = {
     // Copy over static assets
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'src/translations/*', to: '../translations', flatten: true },
-        { from: 'src/manifest.json', to: '../', flatten: true },
-        { from: 'src/images/*', to: '.', flatten: true },
-        { from: '.zat', to: '../', flatten: true }
+        { from: 'src/translations/*', to: '../translations/[name][ext]' },
+        { from: 'src/manifest.json', to: '../[name][ext]' },
+        { from: 'src/images/*', to: './[name][ext]' },
+        { from: '.zat', to: '../[name][ext]' }
       ]
     }),
 
