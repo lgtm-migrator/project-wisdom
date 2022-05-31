@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/dxw/zendesk_apps_tools
-  revision: f97d15ec67a0f9749a8bc8fec5b98a9c11b4a1f5
+  revision: 748235b26fcde850e39954207dab58958b1e316a
   specs:
     zendesk_apps_tools (3.8.11)
       execjs (~> 2.7.0)
